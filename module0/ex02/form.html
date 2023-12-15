@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="form" content="personal information form">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Form!</title>
 </head>
+
 <body>
-    
+    <div class="form">
+        <h1 class="header">My first form!</h1>
+        <div class="text">
+            <label for="firstname">Firstname:</label>
+            <input type="text" id="firstname" name="firstname" />
+        </div>
+        <div class="text">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" />
+        </div>
+        <div class="text">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" />
+        </div>
+        <div class="text">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="text">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+        </div>
+        <div class="text">
+            <label for="student">Student at 42?:</label>
+            <input type="checkbox" id="student" name="student" />
+        </div>
+        <div class="gender">
+            <label for="gender_male">Male</label>
+            <input type="radio" id="gender_male" value="Male" name="gender" />
+            <label for="gender_female">Female</label>
+            <input type="radio" id="gender_female" value="Female" name="gender" />
+            <label for="gender_other">Other</label>
+            <input type="radio" id="gender_other" value="Other" name="gender" />
+        </div>
+        <div class="text">
+            <input class="button" type="submit" value="Run that cool Javascript!" onclick="displayFormContents()" />
+            <script type="text/javascript" src="popup.js"></script>
+        </div>
+    </div>
 </body>
+
 </html>
