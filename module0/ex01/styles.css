@@ -31,6 +31,7 @@
 .projects
 {
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .rows>td
@@ -38,7 +39,7 @@
     background: rgb(248, 177, 177);
     border: 1px solid;
     border-color: black;
-    width: 80px;
+    width: calc(100%/3);
     padding:20px;
 }
 .header
