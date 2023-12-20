@@ -1,6 +1,11 @@
 import random
+from beverages import *
 
 class CoffeeMachine:
+    class BrokenMachineException(Exception):
+        def __init__(self):
+            super().__init__("This coffee machine has to be repaired.")
+
     def __init__(self):
         self.servings = 0
 
@@ -9,28 +14,53 @@ class CoffeeMachine:
 
     def serve(self, beverage):
         if self.servings >= 10:
-            raise BrokenMachineException()
+            raise self.BrokenMachineException()
         self.servings += 1
-
-    class BrokenMachineException(Exception):
-        def __init__(self):
-            self.message = "This coffee machine has to be repaired."
+        if random.randint(0, 5) == 0:
+            return EmptyCup()
+        else:
+            if beverage == 'Coffee':
+                return Coffee()
+            elif beverage == 'Tea':
+                return Tea()
+            elif beverage == 'Chocolate':
+                return Chocolate()
+            elif beverage == 'Capuccino':
+                return Capuccino()
+            else:
+                return EmptyCup()
 
 if __name__ == '__main__':
     mac = CoffeeMachine()
-    mac.serve()
-    mac.serve()
-    mac.serve()
-    mac.serve()
-    mac.serve()
-    mac.serve()
-    mac.serve()
-    mac.serve()
-    mac.serve()
-    mac.serve()
+    print(mac.serve('Tea'))
+    print()
+    print(mac.serve('Chocolate'))
+    print()
+    print(mac.serve('Capuccino'))
+    print()
+    print(mac.serve('Coffee'))
+    print()
+    print(mac.serve('Water'))
+    print()
+    print( mac.serve('Tea'))
+    print()
+    print(mac.serve('Chocolate'))
+    print()
+    print(mac.serve('Capuccino'))
+    print()
+    print(mac.serve('Coffee'))
+    print()
+    print(mac.serve('Coffe'))
+    print()
     try:
-        mac.serve()
-    except:
-        mac.serve()
+        print(mac.serve('Chocolate'))
+    except Exception as ex:
+        print(ex)
+        print()
+    try:
+        print(mac.serve('Tea'))
+    except Exception as ex:
+        print(ex)
+        print()
     mac.repair()
-    mac.serve()
+    print(mac.serve('Capuccino'))
